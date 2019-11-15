@@ -38,13 +38,6 @@ using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
 
-#if WITH_MONO_DESIGN
-using Mono.Design;
-using DocumentDesigner = Mono.Design.DocumentDesigner;
-using UndoEngine = Mono.Design.UndoEngine;
-using MenuCommandService = Mono.Design.MenuCommandService;
-#endif
-
 namespace mwf_designer
 {
 	public partial class MainView : Form
@@ -62,7 +55,7 @@ namespace mwf_designer
 		}
 
 		private void LoadFile(string f) {
-			System.Console.WriteLine("LoadFile: {0}", f);
+            Console.WriteLine("LoadFile: {0}", f);
 			if (surfaceTabs.TabPages.ContainsKey (f)) {// tab page for file already existing
 				surfaceTabs.SelectedTab = surfaceTabs.TabPages[f];
 			} else {
@@ -74,12 +67,14 @@ namespace mwf_designer
 		}
 
 		private void openToolStripMenuItem_Click (object sender, EventArgs e)
-		{			
-			OpenFileDialog dialog = new OpenFileDialog ();
-			dialog.CheckFileExists = true;
-			dialog.Multiselect = false;
-			dialog.Filter = "C# Source Code (*.cs)|*.cs|VB.NET Source Code (*.vb)|*.vb";
-			if (dialog.ShowDialog () == DialogResult.OK)
+        {
+            OpenFileDialog dialog = new OpenFileDialog
+            {
+                CheckFileExists = true,
+                Multiselect = false,
+                Filter = "C# Source Code (*.cs)|*.cs|VB.NET Source Code (*.vb)|*.vb"
+            };
+            if (dialog.ShowDialog () == DialogResult.OK)
 				LoadFile(dialog.FileName);
 		}
 
@@ -131,7 +126,7 @@ namespace mwf_designer
 
 		private void OnDocumentModified (object sender, EventArgs args)
 		{
-			if (!surfaceTabs.SelectedTab.Text.EndsWith (MODIFIED_MARKER))
+			if (!surfaceTabs.SelectedTab.Text.EndsWith(MODIFIED_MARKER, StringComparison.Ordinal))
 				surfaceTabs.SelectedTab.Text += MODIFIED_MARKER;
 		}
 
@@ -246,5 +241,10 @@ namespace mwf_designer
 					menuCommands.FindCommand (StandardCommands.Delete).Invoke ();
 			}
 		}
-	}
+
+        private void OnAbout_Clicked (object sender, EventArgs args)
+        {
+            MessageBox.Show("Ivan N. Zlatev - 2007/2009");
+        }
+    }
 }

@@ -13,7 +13,7 @@ namespace mwf_designer
 		static void Main(string[] args)
 		{
 			AppDomain.CurrentDomain.UnhandledException += delegate (object sender, UnhandledExceptionEventArgs ueargs) {
-				System.Windows.Forms.MessageBox.Show (ueargs.ExceptionObject.GetType ().Name);
+                MessageBox.Show (ueargs.ExceptionObject.GetType ().Name);
 				if (ueargs.ExceptionObject is Exception)
 					OnException ((Exception) ueargs.ExceptionObject);
 			};
@@ -24,7 +24,7 @@ namespace mwf_designer
 				Application.Run(new MainView(args));
 			} catch (Exception e) {
 				OnException (e);
-				System.Windows.Forms.Application.Exit ();
+                Application.Exit();
 			}
 		}
 

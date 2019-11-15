@@ -54,7 +54,7 @@ namespace mwf_designer
 			if (toolBoxItem.Bitmap != null)
 				image = toolBoxItem.Bitmap;
 			else
-				image = SystemIcons.Exclamation.ToBitmap ();
+				image = SystemIcons.WinLogo.ToBitmap ();
 
 			tool_box_item = toolBoxItem;
 		}

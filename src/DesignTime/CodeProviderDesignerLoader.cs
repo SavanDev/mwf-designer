@@ -35,12 +35,6 @@ using System.ComponentModel.Design.Serialization;
 using System.IO;
 using System.Windows.Forms.Design;
 
-
-#if WITH_MONO_DESIGN
-using Mono.Design;
-using CodeDomDesignerLoader = Mono.Design.CodeDomDesignerLoader;
-#endif
-
 namespace mwf_designer
 {
 	internal class CodeProviderDesignerLoader : CodeDomDesignerLoader
@@ -50,9 +44,7 @@ namespace mwf_designer
 
 		public CodeProviderDesignerLoader (CodeProvider provider)
 		{
-			if (provider == null)
-				throw new ArgumentNullException ("provider");
-			_provider = provider;
+            _provider = provider ?? throw new ArgumentNullException(nameof(provider));
 		}
 
 		protected override CodeDomProvider CodeDomProvider {
@@ -89,17 +81,18 @@ namespace mwf_designer
 			if (errors == null)
 				return;
 
-			IUIService service = base.GetService (typeof (IUIService)) as IUIService;
-			if (service != null) {
-				foreach (object error in errors) {
-					if (error is Exception)
-						service.ShowError ((Exception) error);
-					else if (error is string)
-						service.ShowError ((string) error);
-					else
-						service.ShowError (error.ToString ());
-				}
-			}
-		}
-	}
+            if (GetService(typeof(IUIService)) is IUIService service)
+            {
+                foreach (object error in errors)
+                {
+                    if (error is Exception)
+                        service.ShowError((Exception)error);
+                    else if (error is string)
+                        service.ShowError((string)error);
+                    else
+                        service.ShowError(error.ToString());
+                }
+            }
+        }
+    }
 }

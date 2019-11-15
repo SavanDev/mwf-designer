@@ -239,6 +239,7 @@ namespace mwf_designer
 			this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
 			this.aboutToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
 			this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.OnAbout_Clicked);
 			// 
 			// splitContainer1
 			// 
@@ -307,7 +308,8 @@ namespace mwf_designer
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(829, 493);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+			this.ClientSize = new System.Drawing.Size(900, 700);
 			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.mainMenu);
 			this.MainMenuStrip = this.mainMenu;
