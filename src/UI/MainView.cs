@@ -244,7 +244,8 @@ namespace mwf_designer
 
         private void OnAbout_Clicked (object sender, EventArgs args)
         {
-            MessageBox.Show("Ivan N. Zlatev - 2007/2009");
+            About about = new About();
+            about.ShowDialog();
         }
     }
 }

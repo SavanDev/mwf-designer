@@ -56,6 +56,12 @@
     <Compile Include="src\Project\References.cs" />
     <Compile Include="src\Project\TemplateManager.cs" />
     <Compile Include="src\Project\Workspace.cs" />
+    <Compile Include="src\UI\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\UI\About.designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\UI\ErrorList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -107,6 +113,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="src\UI\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
