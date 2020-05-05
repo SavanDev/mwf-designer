@@ -44,7 +44,6 @@
     <Reference Include="System.Design" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\AssemblyInfo.cs" />
     <Compile Include="src\DesignTime\CodeProvider.cs" />
     <Compile Include="src\DesignTime\CodeProviderDesignerLoader.cs" />
     <Compile Include="src\DesignTime\CodeProviderEventBindingService.cs" />
@@ -59,7 +58,7 @@
     <Compile Include="src\UI\About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\UI\About.designer.cs">
+    <Compile Include="src\UI\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
     <Compile Include="src\UI\ErrorList.cs">
@@ -107,12 +106,13 @@
     <Compile Include="src\UI\ToolBoxList\ToolBoxListItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="src\Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ChangeLog.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties\" />
+    <Folder Include="src\Properties\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="src\UI\About.resx">

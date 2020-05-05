@@ -1,9 +1,0 @@
-C:\Users\dylan\Documents\Proyectos\mwf-designer\build\mwf-designer.exe
-C:\Users\dylan\Documents\Proyectos\mwf-designer\build\mwf-designer.pdb
-C:\Users\dylan\Documents\Proyectos\mwf-designer\build\ICSharpCode.NRefactory.dll
-C:\Users\dylan\Documents\Proyectos\mwf-designer\obj\Debug\mwf-designer.csprojAssemblyReference.cache
-C:\Users\dylan\Documents\Proyectos\mwf-designer\obj\Debug\mwf-designer.csproj.CopyComplete
-C:\Users\dylan\Documents\Proyectos\mwf-designer\obj\Debug\mwf-designer.exe
-C:\Users\dylan\Documents\Proyectos\mwf-designer\obj\Debug\mwf-designer.pdb
-C:\Users\dylan\Documents\Proyectos\mwf-designer\obj\Debug\mwf_designer.About.resources
-C:\Users\dylan\Documents\Proyectos\mwf-designer\obj\Debug\mwf-designer.csproj.GenerateResource.cache
